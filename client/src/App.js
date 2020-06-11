@@ -1,29 +1,32 @@
+
 import React, { Component } from 'react';
-import AddBook from "./components/AddBook"
+import logo from './logo.svg';
 import './App.css';
+import { Books } from "./components/Books"
 
 class App extends Component {
+
   constructor() {
     super()
-    this.state ={
-
+    this.state = {
+      books: []
     }
   }
-  componentDidMount(){
-    fetch('http://localhost:3001/')
-    .then(response => response.json())
-    .then(result => {
-      this.setState({
 
+  componentDidMount() {
+    fetch("http://localhost:3001/api/books")
+    .then(response => response.json())
+      .then(result => {
+        console.log(result)
+        this.setState({
+         books: result
       })
     })
   }
 
-  render(){
+  render() {
     return (
-<div>
-<AddBook />
-</div>
+      <Books books = {this.state.books} />
     )
   }
 }

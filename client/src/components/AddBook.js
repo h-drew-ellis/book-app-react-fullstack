@@ -22,7 +22,7 @@ export class AddBook extends Component {
 
     handleSubmit = () => {
         this.setState({
-            message: this.state.title + " was susccessfully added!"
+            message: this.state.title + " was successfully loaded!"
         })
 
         const book = {
@@ -33,7 +33,7 @@ export class AddBook extends Component {
             imageURL: this.state.imageURL
         }
         console.log(book)
-        fetch("http://localhost:3001/add-book", { 
+        fetch("http://localhost:3719/add-book", { 
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
