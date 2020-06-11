@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./BookDetails.css"
 
 export class BookDetails extends Component {
 
